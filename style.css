@@ -1,0 +1,137 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Raleway',sans-serif , 微軟正黑體;
+}
+
+body{
+    background-color: #e0e0e2;
+    box-sizing: border-box;
+    /* 跟content box 區別可以上網查 也可以打padding: 40px 讓他不要頂天立地，但我上課到後面加了card__container 所以先刪除; */ 
+}
+
+.card__container{
+    width: 100%;
+    height: 100vh;
+    /* 寬度可以打%就好，高度要讓他佔滿版，要寫view height (vh)，可以去網站又見檢查看看顏色範圍 */
+    display: flex;
+    /* 置中，較複雜後續補 */
+}
+
+.card{
+    background: white;
+    /* 與background-color 不同是 background 可以有照片、漸層顏色、顏色，background-color 只能有顏色 */
+    width: 350px;
+    height: 200px;
+    margin: auto;
+    /* auto的話，我可以任意拉大縮小瀏覽器，它依然置中（但只控制左右為主）很重要！ */
+    border-radius: 6px; 
+    /* 縮圓角 */
+    padding: 25px;
+    /* 因為不想要字黏在邊邊 */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    /* 第一個數值為Ｘ軸，第二個數值為Ｙ軸，第三個為模糊半徑。rgba的rgb是三元色，a是透明度，最高是1 */
+    position: relative;
+    overflow: hidden;
+    /* overflow 為在division外的空間做hidden(不顯示)
+    顯示為visible(顯示) */
+    transition: all 0.5s;
+    /* 轉場，所有需要動畫的東西（all），因為動畫我沒有個別命名 */
+}
+
+.card__name{
+    font-size: 30px;
+}
+
+.card__ENname{
+    color: #666;
+    margin: 5px 0;
+    /* 亦可打margin: 5px 0 5px 0 代表 上右下左，否 則為“上下”與“左右”一起調整 ; */
+}
+
+.card__job{
+    color: #36b9c1;
+    font-weight: 600;
+    /* 粗細 */
+}
+
+.card__detail_content{
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 22px;
+    color: #666;
+    margin-top: 10px;
+    /* letter-spacing 字之間的間距，line-height 上下行距， margin-top 上面再延伸多少PX，也可以開新的寫<hr> margin-bottom : ; */
+}
+
+.card__detail{
+    margin-top: 10px;
+    padding-right: 150px;
+    /* padding-right 把右邊內縮多少 */
+}
+
+.card__wave{
+    width: 700px;
+    height: 700px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 40%;
+    opacity: 0.5;
+    margin-top: -50%;
+    /* px寫死的，用％比較好，對應響應式 */
+  
+}
+
+.card__wave--one{
+    background: #32a7c4;
+    margin-left: 70%;
+    /* margin-left: 260px; */
+    animation: rotate 6000ms infinite linear;
+    /* 下面命名什麼就打什麼 
+   infinite 無止盡的
+   linear 線性的 
+    */
+    transition: all 0.5s;
+}
+
+.card__wave--two{
+    background: yellow;
+    margin-left: 65%;
+    animation: rotate 10000ms infinite linear;
+    opacity: 0.2;
+    transition: all 1s;
+}
+
+.card__wave--three{
+    background: #32a7c4;
+    margin-left: 68%;
+    animation: rotate 7000ms infinite linear;
+    transition: all 1.5s;
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate( 360deg );
+    }
+    to{
+        transform: rotate( 0deg);
+    }
+}
+
+.card:hover {
+    transform: translate3d(-5px, -5px, 0);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover .card__wave--one {
+    left: 50px;
+}
+
+.card:hover .card__wave--two {
+    left: 50px;
+}
+
+.card:hover .card__wave--three {
+    left: 50px;
+}

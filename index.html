@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <!-- ./ 讓html 讀到css的檔案位置 -->
+    <title>Name Card</title>
+</head>
+
+<body>
+   <div class="card__container">
+    <div class="card">
+        <!-- class是命名，讓css讀到的，css要讀到要去css地方.名字。例如：.card -->
+
+        <div class="card__wave card__wave--one"></div>
+        <div class="card__wave card__wave--two"></div>
+        <div class="card__wave card__wave--three"></div>
+        <!-- card__wave可以一起改（樣式） card__wave--one two three 可以個別再小改（顏色），一個class 可以有很多classname，可以吃很多classname的效果  -->
+
+        <h1 class="card__name">鄭宇芯</h1>
+        <h4 class="card__ENname">Christina Cheng</h4>
+        <h4 class="card__job">UIUX designer/researcher</h4>
+        <div class="card__detail">
+            <hr>
+            <p class="card__detail_content">目前就讀於國立陽明交通大學
+                傳播研究所，主修UIUX設計與UX相關研究方法。</p>
+            <!-- 記得命名要一直包下去，完整一點好交接 -->
+        </div>
+        
+    </div>
+
+   </div>
+</body>
+
+</html>
+
+
+<!-- .classname 會產生div（快速寫法） -->
+<!-- h1.h1name 直接產生h1 -->
+<!--  (h1.name)*5 會產生五個 -->
+<!-- .classname>h1.h1name>p.pname 會直接幫你包好全部，記得不可以>之間打空白，需要一鼓作氣打完才行，且複製貼上不適用，要刪掉最後一個字母再打完!!!-->
